@@ -594,4 +594,14 @@ export default [
       `@/pages/widgets/List.vue`
     )
   },
+  {
+    path: '/dash/insumo',
+    meta: { breadcrumb: true },
+    name: 'insumo/criar',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/components/dash/insumo/insumoCreate.vue`
+    )
+  },
 ];

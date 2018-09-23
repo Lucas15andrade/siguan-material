@@ -1,5 +1,6 @@
 const Menu =  [
-  { header: 'Apps' },
+  { header: 'Painel de controle' },
+  /*
   {
     title: 'Dashboard',
     group: 'apps',
@@ -26,18 +27,14 @@ const Menu =  [
     name: 'Media',
     icon: 'perm_media',
   },
+  */
+
   {
-    title: 'Widgets',
-    group: 'widgets',
-    component: 'widgets',
+    title: 'Insumos',
     icon: 'widgets',
     items: [
-      { name: 'social', title: 'Social', component: 'components/social' },
-      { name: 'statistic', title: 'Statistic', badge: 'new', component: 'components/statistic' },
-      { name: 'chart', title: 'Chart', component: 'components/chart' },
-      { name: 'list', title: 'List', component: 'components/widget-list' },
-      // { name: 'post', title: 'Post', component: 'components/widget-post' },
-    ]
+      { name: 'insumo', title: 'Listar Insumo', component: 'components/social' },
+      { name: 'cadastroInsumo', title: 'Cadastrar Insumo', component: 'insumo/criar' }]
   },  
   { header: 'UI Elements' },
   {
@@ -125,6 +122,7 @@ const Menu =  [
   },
 ];
 // reorder menu
+/*
 Menu.forEach((item) => {
   if (item.items) {
     item.items.sort((x, y) => {
@@ -134,5 +132,6 @@ Menu.forEach((item) => {
     });
   }
 });
+*/
 
 export default Menu;
