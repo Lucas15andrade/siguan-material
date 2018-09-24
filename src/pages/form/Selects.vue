@@ -243,21 +243,22 @@ export default {
   computed: {
   },  
   watch: {
-    search (val) {
-      val && this.querySelections(val);
-    }
+    //search (val) {
+     // val && this.querySelections(val);
+    //}
   },
   methods: {
-    querySelections (v) {
-      console.log(v);
-      this.loading = true;
+    teste (v) {
+      //console.log(v);
+      //this.loading = true;
+      this.items = this.countries;
       // Simulated ajax query
+      /*
       setTimeout(() => {
-        this.items = this.countries.filter(e => {
-          return (e.country || '').toLowerCase().indexOf((v || '').toLowerCase()) > -1;
-        });
+        this.items = this.countries;
         this.loading = false;
       }, 500);
+      */
     }
   }
 };
