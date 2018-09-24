@@ -207,6 +207,7 @@
 <script>
 //Importando compoente de card do Material Design
 import VWidget from '@/components/VWidget';
+import tipoInsumo from '@/api/tipoInsumo';
 export default {
   components: {
     VWidget
@@ -220,7 +221,8 @@ export default {
           const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
           return pattern.test(value) || 'Invalid e-mail.';
         }    
-      }  
+      },
+        
     };
   },
   computed: {
