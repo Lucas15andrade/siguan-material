@@ -66,12 +66,13 @@ export default [
     }
   },
   {
-    path: '/dashboard',
+    path: '/',
     meta: { breadcrumb: true },
     name: 'Dashboard',
     component: () => import(
       /* webpackChunkName: "routes" */
       /* webpackMode: "lazy-once" */
+      /* Trocar pelo Login */
       `@/pages/Dashboard.vue`
     )
   },

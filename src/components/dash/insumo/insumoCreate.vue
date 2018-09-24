@@ -15,7 +15,7 @@
                   <v-flex xs8>
                     <v-text-field
                       label="Nome do insumo"
-                      v-model="email"
+                      v-model="nome"
                       :rules="[rules.required]"
                     ></v-text-field>
                   </v-flex>
@@ -34,18 +34,14 @@
                   </v-flex>
                 </v-layout>
                 <v-layout row>
-                  <v-flex xs4>
-                    <v-subheader>Focus</v-subheader>
+                  <v-flex xs6>
+                    <v-subheader>Standard</v-subheader>
                   </v-flex>
-                  <v-flex xs8>
-                    <v-text-field
-                      name="input-2"
-                      label="Label Text"
-                      value="Input text"
-                      color="success"
-                      class="input-group--focused"
-                    ></v-text-field>
-                  </v-flex>
+                  <v-flex xs6>
+                    <v-select
+                      label="Tipo de insumo"
+                      
+                    ></v-select>
                 </v-layout>
                 <v-layout row>
                   <v-flex xs4>
