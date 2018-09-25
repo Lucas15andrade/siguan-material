@@ -469,8 +469,10 @@ export default {
     }  
     */
   },
+  /*
   created(){
     setTimeout(() => this.itensInsumo = selectValues, 1000)
   }
+  */
 };
 </script>

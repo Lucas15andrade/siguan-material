@@ -1,5 +1,5 @@
 const Menu =  [
-  { header: 'Painel de controle' },
+  { header: 'Insumos' },
   /*
   {
     title: 'Dashboard',
@@ -28,14 +28,115 @@ const Menu =  [
     icon: 'perm_media',
   },
   */
-
+  /* Insumos */
   {
     title: 'Insumos',
     icon: 'widgets',
     items: [
       { name: 'insumo', title: 'Listar Insumo', component: 'components/social' },
       { name: 'cadastroInsumo', title: 'Cadastrar Insumo', component: 'insumo/criar' }]
-  },  
+  },
+  {
+    title: 'Insumo per capta',
+    icon: 'widgets',
+    items: [
+      { name: 'insumoPerCapta', title: 'Listar Insumo', component: 'components/social' },
+      { name: 'novoInsumoPerCapta', title: 'Novo insumo per capta', component: 'insumo/criar' }]
+  },
+  {
+    title: 'Cortes',
+    icon: 'widgets',
+    items: [
+      { name: 'corte', title: 'Listar cortes', component: 'components/social' },
+      { name: 'novoCorte', title: 'Novo Corte', component: 'insumo/criar' }]
+  },
+  
+  /* Preparações */
+  { header: 'Preparações' },
+  {
+    title: 'Preparações',
+    icon: 'widgets',
+    items: [
+      { name: 'preparacao', title: 'Listar Preparações', component: 'components/social' },
+      { name: 'novoPreparacao', title: 'Cadastrar preparação', component: 'insumo/criar' }]
+  },
+  {
+    title: 'Salas de Preparação',
+    icon: 'widgets',
+    items: [
+      { name: 'salaPreparacao', title: 'Listar Salas de Preparação', component: 'components/social' },
+      { name: 'novoSalaPreparacao', title: 'Cadastrar Sala de preparação', component: 'insumo/criar' }]
+  },
+
+  /* Cardápios */
+  { header: 'Cardápios' },
+  {
+    title: 'Cardápios',
+    icon: 'widgets',
+    items: [
+      { name: 'cardapio', title: 'Listar Cardápios', component: 'components/social' },
+      { name: 'novoCardapio', title: 'Cadastrar cardápio', component: 'insumo/criar' }]
+  },
+
+  /* Estoque */
+  { header: 'Estoque' },
+  {
+    title: 'Armazém',
+    icon: 'widgets',
+    items: [
+      { name: 'armazem', title: 'Listar Armazens', component: 'components/social' },
+      { name: 'novoArmazem', title: 'Cadastrar armazém', component: 'insumo/criar' }]
+  },
+
+  /* Embalagens */
+  { header: 'Embalagens' },
+  {
+    title: 'Embalagens',
+    icon: 'widgets',
+    items: [
+      { name: 'embalagem', title: 'Listar Embalagens', component: 'components/social' },
+      { name: 'novoEmbalagem', title: 'Cadastrar Embalagem', component: 'insumo/criar' }]
+  },
+
+  /* Prescrições */
+  { header: 'Prescrições' },
+  {
+    title: 'Precrições',
+    icon: 'widgets',
+    items: [
+      { name: 'prescricao', title: 'Listar Pescrições', component: 'components/social' },
+      { name: 'novoPercricao', title: 'Cadastrar pescrição', component: 'insumo/criar' }]
+  },
+
+  /* Mapa de degelo */
+  { header: 'Mapa de degelo' },
+  {
+    title: 'Mapa de degelo',
+    icon: 'widgets',
+    items: [
+      { name: 'novoMapa', title: 'Cadastrar mapa', component: 'insumo/criar' }]
+  },
+
+  /* Usuários */
+  { header: 'Usuários' },
+  {
+    title: 'Usuários',
+    icon: 'widgets',
+    items: [
+      { name: 'usuario', title: 'Listar Usuários', component: 'components/social' },
+      { name: 'novoUsuario', title: 'Cadastrar usuário', component: 'insumo/criar' }]
+  },
+
+  /* Configurações */
+  { header: 'Configurações' },
+  {
+    title: 'Configurações',
+    icon: 'widgets',
+    items: [
+      { name: 'configuracao', title: 'Configurações', component: 'components/alerts' }]
+  },
+
+  /* Menu padrão */
   { header: 'UI Elements' },
   {
     title: 'General',
