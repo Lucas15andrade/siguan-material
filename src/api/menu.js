@@ -1,6 +1,6 @@
 const Menu =  [
   { header: 'Insumos' },
-  /*
+  
   {
     title: 'Dashboard',
     group: 'apps',
@@ -27,14 +27,19 @@ const Menu =  [
     name: 'Media',
     icon: 'perm_media',
   },
-  */
+  
   /* Insumos */
   {
     title: 'Insumos',
-    icon: 'widgets',
+    group: 'apps',
+    name: 'insumo/criar',
+    icon: 'email',
+    
+    /*
     items: [
       { name: 'insumo', title: 'Listar Insumo', component: 'components/social' },
       { name: 'cadastroInsumo', title: 'Cadastrar Insumo', component: 'insumo/criar' }]
+      */
   },
   {
     title: 'Insumo per capta',

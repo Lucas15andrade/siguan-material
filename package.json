@@ -1,8 +1,8 @@
 {
-  "name": "vue-material-admin",
-  "version": "1.0.0",
-  "description": "A Vue Material Admin Template",
-  "author": "Micahel Wang <wangqiangshen@gmail.com>",
+  "name": "siguan-material",
+  "version": "2.0.0",
+  "description": "Versão em Material Design no SIGUAN",
+  "author": "Lucas Andrade <lap.andrade15@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",

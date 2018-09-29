@@ -414,17 +414,19 @@
                     ></v-text-field>
                   </v-flex>
                 </v-layout>
-                <v-layout row>
-                  <v-flex xs2>
-                    <v-btn color="info">Salvar</v-btn>
-                  </v-flex>  
-                </v-layout>   
+                
+                    <v-btn color="info" bottom="bottom" right="right">Salvar</v-btn>
+                    
               </v-container>
             </div>
+          
           </v-widget>
         </v-flex>
       </v-layout>
     </v-container>
+    <v-btn small fab dark falt fixed bottom="bottom" right="right" class="setting-fab" color="red" @click="cadastrarInsumo">
+            <v-icon>settings</v-icon>
+          </v-btn>
   </div>
 </template>
 
@@ -439,9 +441,10 @@ export default {
   },
   data () {
     return {
+
+
     
-      //itensInsumo: [],
-      itensInsumo: ['Foo', 'Bar', 'Fizz', 'Buzz'],
+      itensInsumo: [],
       insumos: tipoInsumo,
       valor: '',
       countries: Countries,
@@ -455,24 +458,18 @@ export default {
       },
     };
   },
-  computed: {
-    /*
-    preencher: function(){
-      items = JSON.parse(tipoInsumo);
-    }*/
-  },  
-  methods: {
-    /*
-    preencher: function(){
-      items = JSON.parse(tipoInsumo);
-      return items[1];
-    }  
-    */
+  methods:{
+    cadastrarInsumo(){
+
+    }
   },
-  /*
-  created(){
-    setTimeout(() => this.itensInsumo = selectValues, 1000)
+  computed: {
+    insumos(){
+      return tipoInsumo;
+    }
+  },  
+  created:{
+    
   }
-  */
 };
 </script>
