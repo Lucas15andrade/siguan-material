@@ -605,4 +605,14 @@ export default [
       `@/components/dash/insumo/insumoList.vue`
     )
   },
+  {
+    path: '/dash/insumoCadastrar',
+    meta: { breadcrumb: true },
+    name: 'insumo/cadastrar',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/components/dash/insumo/insumoCreate.vue`
+    )
+  },
 ];

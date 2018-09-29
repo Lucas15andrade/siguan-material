@@ -1,7 +1,7 @@
 <template>
   <v-card>
     <v-toolbar card dense color="transparent">
-      <v-toolbar-title><h4>Insumos cadastrados</h4></v-toolbar-title>
+      <v-toolbar-title><h4>Insumos</h4></v-toolbar-title>
       <v-spacer></v-spacer>
       <v-btn icon>
         <v-icon>more_vert</v-icon>
@@ -12,10 +12,9 @@
       <template>
         <v-data-table
           :headers="headers"
-          :items="projects"
+          :items="retornarInsumos"
           hide-actions
-          class="elevation-0"
-        >
+          class="elevation-0">
           <template slot="items" slot-scope="props">
             <td>
               <v-avatar size="36px">
@@ -35,6 +34,19 @@
             </td>
           </template>
         </v-data-table>
+        <!-- Float Action Button -->
+        <v-btn
+          @click="avancarCadastroInsumo()"
+          color="red"
+          dark
+          fab
+          fixed
+          bottom
+          right>
+        <v-icon>add</v-icon>
+        <v-icon>close</v-icon>
+      </v-btn>
+      <!-- -->        
       </template>
       <v-divider></v-divider>
     </v-card-text>
@@ -42,7 +54,7 @@
 </template>
 
 <script>
-import { Projects } from '@/api/tipoInsumo';
+import { Insumos } from '@/api/insumos';
 export default {
   data () {
     return {
@@ -54,7 +66,7 @@ export default {
           value: 'avatar'
         },
         {
-          text: 'Name',
+          text: 'Insumo',
           align: 'left',
           value: 'name'
         },
@@ -66,8 +78,14 @@ export default {
     };
   },
   computed: {
-    projects () {
-      return Projects;
+    retornarInsumos () {
+      return Insumos;
+    }
+  },
+  methods: {
+    avancarCadastroInsumo(){
+      //Direcionar para insumoCreate.vue
+      alert("Rota atual");
     }
   }
 };

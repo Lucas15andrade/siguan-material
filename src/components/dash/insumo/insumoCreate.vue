@@ -393,6 +393,7 @@ export default {
     insumos() {
       return tipoInsumo;
     }
+    
   },
   created: {}
 };

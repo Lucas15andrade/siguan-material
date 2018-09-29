@@ -17,8 +17,8 @@
             <span class="caption mr-1"> Make With Love </span> <v-icon color="pink" small>favorite</v-icon>
           </v-footer>
         </v-content>
-        <!-- Go to top -->
-        <app-fab></app-fab>
+        <!-- Go to top
+        <app-fab></app-fab> -->
         <!-- theme setting -->
         <!--
         <v-btn small fab dark falt fixed top="top" right="right" class="setting-fab" color="red" @click="openThemeSettings">
