@@ -598,11 +598,11 @@ export default [
   {
     path: '/dash/insumo',
     meta: { breadcrumb: true },
-    name: 'insumo/criar',
+    name: 'insumo/listar',
     component: () => import(
       /* webpackChunkName: "routes" */
       /* webpackMode: "lazy-once" */
-      `@/components/dash/insumo/insumoCreate.vue`
+      `@/components/dash/insumo/insumoList.vue`
     )
   },
 ];

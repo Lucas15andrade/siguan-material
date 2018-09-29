@@ -32,7 +32,7 @@ const Menu =  [
   {
     title: 'Insumos',
     group: 'apps',
-    name: 'insumo/criar',
+    name: 'insumo/listar',
     icon: 'email',
     
     /*
@@ -129,7 +129,7 @@ const Menu =  [
     icon: 'widgets',
     items: [
       { name: 'usuario', title: 'Listar Usuários', component: 'components/social' },
-      { name: 'novoUsuario', title: 'Cadastrar usuário', component: 'insumo/criar' }]
+      { name: 'novoUsuario', title: 'Cadastras usuário', component: 'insumo/criar' }]
   },
 
   /* Configurações */

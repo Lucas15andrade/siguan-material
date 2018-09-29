@@ -6,41 +6,32 @@
           <!-- Aqui começa o card de cadastro de insumos -->
           <v-widget title="Cadastro de insumos">
             <div slot="widget-content">
-              <v-container>
+              <v-container grid-list-xl text-xs-center fluid>
                 <v-layout row>
-                  <v-flex xs4>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Nome do insumo</v-subheader>
-                  </v-flex>
-                  <v-flex xs8>
+                  <v-flex xs6>
                     <v-text-field
                       label="Nome do insumo"
                       v-model="email"
+                      prepend-icon="place"
                       :rules="[rules.required]"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>                
                 <v-layout row>
-                  <v-flex xs4>
-                    <v-subheader>Descrição do insumo</v-subheader>
-                  </v-flex>
-                  <v-flex xs8>
-                    <v-text-field
-                      name="input-2"
-                      label="Descrição do insumo"
-                      multi-line
-                      :rules="[rules.required]"
-                    ></v-text-field>
+                  <v-flex xs6>
+                    <v-textarea
+                    label="Descrição do insumo"
+                    prepend-icon="place"
+                    :rules="[rules.required]">
+                    </v-textarea>
                   </v-flex>
                 </v-layout>
                 <v-layout row>
                   <v-flex xs6>
-                    <v-subheader>Tipo do insumo</v-subheader>
-                  </v-flex>
-                  <v-flex xs6>
                     <v-select
                       :items="itensInsumo"
                       label="Tipo de insumo"
+                      prepend-icon="place"
                       item-text="tipo"
                       item-value="valor"
                       class="input-group--focused"
@@ -50,20 +41,17 @@
                 </v-layout>
                 <v-layout row>
                   <v-flex xs6>
-                    <v-subheader>Unidade base do insumo</v-subheader>
-                  </v-flex>
-                  <v-flex xs6>
                     <v-select
                       :items="itensInsumo"
                       label="Tipo de insumo"
+                      prepend-icon="place"
                       item-text="tipo"
                       item-value="valor"
                       class="input-group--focused"
                     ></v-select>
                     <p>Item do insumo 0: {{this.itensInsumo[0]}}</p>
                   </v-flex>
-                </v-layout>
-                            
+                </v-layout>              
               </v-container>
             </div>
           </v-widget>
@@ -71,22 +59,16 @@
             <div slot="widget-content">
               <v-container>
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Proteínas</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  <v-flex xs5>
                     <v-text-field
+                      prepend-icon="place"
                       label="Quantidade de proteínas"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Carboidratos</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  <v-flex xs5>
                     <v-text-field
+                      prepend-icon="place"
                       label="Quantidade de carboidratos"
                       v-model="email"
                     ></v-text-field>
@@ -94,329 +76,276 @@
                 </v-layout>
 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Lipídeos</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  <v-flex xs5>
                     <v-text-field
-                      label="Quantidade de liídeos"
+                      label="Quantidade de lipídeos"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Tamanho da amostra</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+              
+                  <v-flex xs5>
                     <v-text-field
                       label="Tamanho da amostra"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>
 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Umidade</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+              
+                  <v-flex xs5>
                     <v-text-field
                       label="Umidade"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Energia KCAL</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Valor da energia KCAL"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>
 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Colesterol</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de colesterol"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Energia KJ</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+        
+                  <v-flex xs5>
                     <v-text-field
                       label="Energia KJ"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>
 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Fibra alimentar</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de fibra alimentar"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Cinzas</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de cinzas"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>
 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Cálcio</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de cálcio"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Magnésio</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de magnésio"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>
 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Fósforo</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de fósforo"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Ferro</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de ferro"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>
 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Sódio</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de sódio"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Potásio</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de potásio"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>
 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Manganês</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de Manganês"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Cobre</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de cobre"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>
                 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Zinco</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de zinco"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Retinol</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de retinol"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>
 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>RE</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de RE"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>RAE</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de RAE"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>
 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Tiamina</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de tiamina"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Riboflavina</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de riboflavina"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>    
 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Piridoxina</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de piridoxina"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Niacina</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de niacina"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>  
 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Vitamina C</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de vitamina c"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Saturados</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de saturados"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>  
 
                 <v-layout row>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Monoinsaturado</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de monoinsaturado"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
-                  <v-flex xs2>
-                    <!-- Título a esquerda com campo -->
-                    <v-subheader>Poliinsaturado</v-subheader>
-                  </v-flex>
-                  <v-flex xs3>
+                  
+                  <v-flex xs5>
                     <v-text-field
                       label="Quantidade de poliinsaturado"
+                      prepend-icon="place"
                       v-model="email"
                     ></v-text-field>
                   </v-flex>
                 </v-layout>
-                
-                    <v-btn color="info" bottom="bottom" right="right">Salvar</v-btn>
-                    
+                <v-layout row>
+                  <v-flex xs8>
+                    <v-btn color="info" bottom="true" right="true">Salvar</v-btn>
+                  </v-flex>
+                  
+                </v-layout>
+    
               </v-container>
             </div>
           
@@ -424,52 +353,47 @@
         </v-flex>
       </v-layout>
     </v-container>
+    <!--
     <v-btn small fab dark falt fixed bottom="bottom" right="right" class="setting-fab" color="red" @click="cadastrarInsumo">
-            <v-icon>settings</v-icon>
-          </v-btn>
+      <v-icon>settings</v-icon>
+    </v-btn>
+    -->
   </div>
 </template>
 
 <script>
 //Importando compoente de card do Material Design
-import VWidget from '@/components/VWidget';
-import tipoInsumo from '@/api/tipoInsumo';
-import Countries  from '@/api/country';
+import VWidget from "@/components/VWidget";
+import tipoInsumo from "@/api/tipoInsumo";
+import Countries from "@/api/country";
 export default {
   components: {
     VWidget
   },
-  data () {
+  data() {
     return {
-
-
-    
       itensInsumo: [],
       insumos: tipoInsumo,
-      valor: '',
+      valor: "",
       countries: Countries,
-      email: '',
+      email: "",
       rules: {
-        required: (value) => !!value || 'Required.',
-        email: (value) => {
+        required: value => !!value || "Required.",
+        email: value => {
           const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          return pattern.test(value) || 'Invalid e-mail.';
-        }    
-      },
+          return pattern.test(value) || "Invalid e-mail.";
+        }
+      }
     };
   },
-  methods:{
-    cadastrarInsumo(){
-
-    }
+  methods: {
+    cadastrarInsumo() {}
   },
   computed: {
-    insumos(){
+    insumos() {
       return tipoInsumo;
     }
-  },  
-  created:{
-    
-  }
+  },
+  created: {}
 };
 </script>
