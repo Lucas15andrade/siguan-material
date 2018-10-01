@@ -70,9 +70,9 @@ export default {
           align: 'left',
           value: 'name'
         },
-        { text: 'Deadline', value: 'deadline' },
-        { text: 'Progress', value: 'progress' },
-        { text: 'Action', value: 'action', align: 'right' },
+        { text: 'Descrição', value: 'deadline' },
+        { text: 'Unidade base', value: 'progress' },
+        { text: 'Ações', value: 'action', align: 'right' },
 
       ],
     };
@@ -85,7 +85,7 @@ export default {
   methods: {
     avancarCadastroInsumo(){
       //Direcionar para insumoCreate.vue
-      alert("Rota atual");
+      alert("Clicou no botão de cadastro de insumo");
     }
   }
 };
