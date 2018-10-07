@@ -3,6 +3,7 @@
 import Vue from 'vue';
 import App from './App';
 import Vuetify from 'vuetify';
+import VueResource from 'vue-resource';
 import router from './router';
 import 'font-awesome/css/font-awesome.css';  
 import './theme/default.styl';
@@ -14,6 +15,7 @@ Vue.config.productionTip = false;
 // Global filters
 Vue.filter('truncate', Truncate);
 Vue.use(VeeValidate, { fieldsBagName: 'formFields' });
+Vue.use(VueResource);
 Vue.use(Vuetify, {
   // theme: {
   //   primary: colors.indigo.base, // #E53935

@@ -45,6 +45,7 @@ export default [
       `@/pages/Error.vue`
     )
   },
+  /*
   {
     path: '/login',
     meta: {
@@ -52,11 +53,10 @@ export default [
     },
     name: 'Login',
     component: () => import(
-      /* webpackChunkName: "routes" */
-      /* webpackMode: "lazy-once" */
+      
       `@/pages/Login.vue`
     )
-  },
+  }, */
   {
     path: '/',
     meta: { },
@@ -613,6 +613,16 @@ export default [
       /* webpackChunkName: "routes" */
       /* webpackMode: "lazy-once" */
       `@/components/dash/insumo/insumoCreate.vue`
+    )
+  },
+  {
+    path: '/login',
+    meta: { breadcrumb: true },
+    name: 'login',
+    component: () => import(
+      /* webpackChunkName: "routes" */
+      /* webpackMode: "lazy-once" */
+      `@/components/Login.vue`
     )
   },
 ];

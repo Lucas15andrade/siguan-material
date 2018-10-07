@@ -56,8 +56,26 @@
 <script>
 import { Insumos } from '@/api/insumos';
 export default {
+  created() {
+        this.$http.post('http://ubicomp.eaj.ufrn.br:8080/SIGRU/login',{
+          'login': 'admin',
+          'senha': 'adminsigru'
+        }).then(response => {
+
+          this.usuario = response.body;
+          console.log(this.usuario);
+
+          /*
+          this.insumos = response.body;
+          alert(response.body);
+          console.log(response.body);
+          */
+        })
+      },
   data () {
     return {
+      usuario: '',
+      insumos: [],
       headers: [
         {
           text: '',
@@ -75,6 +93,7 @@ export default {
         { text: 'Ações', value: 'action', align: 'right' },
 
       ],
+      
     };
   },
   computed: {

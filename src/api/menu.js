@@ -41,6 +41,11 @@ const Menu =  [
       { name: 'cadastroInsumo', title: 'Cadastrar Insumo', component: 'insumo/criar' }]
       */
   },
+  {
+    title: 'Login',
+    icon: 'widgets',
+    name: 'login',
+  },
   /*
   {
     title: 'Insumo per capta',

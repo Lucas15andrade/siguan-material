@@ -11,8 +11,8 @@
                   <h1 class="flex my-4 primary--text">SIGUAN</h1>
                 </div>                
                 <v-form>
-                  <v-text-field append-icon="person" name="login" label="Login" type="text" v-model="model.username"></v-text-field>
-                  <v-text-field append-icon="lock" name="password" label="Password" id="password" type="password" v-model="model.password"></v-text-field>
+                  <v-text-field append-icon="person" name="login" label="Login" type="text" v-model="login"></v-text-field>
+                  <v-text-field append-icon="lock" name="password" label="Senha" id="password" type="password" v-model="senha"></v-text-field>
                 </v-form>
               </v-card-text>
               <v-card-actions>
@@ -25,10 +25,9 @@
                 </v-btn>
                 <v-btn icon>
                   <v-icon color="light-blue">fa fa-twitter fa-lg</v-icon>
-                </v-btn>
+                </v-btn> -->
                 <v-spacer></v-spacer>
-                <v-btn block color="primary" @click="login" :loading="loading">Login</v-btn>
-                -->
+                <v-btn block color="primary" @click="logar" :loading="loading">Login</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -42,10 +41,8 @@
 export default {
   data: () => ({
     loading: false,
-    model: {
-      username: 'admin@isockde.com',
-      password: 'password'
-    }
+    login: '',
+    senha: ''
   }),
 
   methods: {
@@ -54,6 +51,18 @@ export default {
       setTimeout(() => {
         this.$router.push('/dashboard');
       }, 1000);
+    },
+    //Método que faz o login através do método http POST no backend
+    logar:function(){
+      //console.log(this.login);
+      //console.log(this.senha);
+      this.$http.post('http://ubicomp.eaj.ufrn.br:8080/SIGRU/login',{
+        'login': this.login,
+        'senha': this.senha
+      }).then(response => {
+        console.log(response.body);
+        console.log(response.headers)
+      })
     }
   }
 
