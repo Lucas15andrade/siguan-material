@@ -35,8 +35,9 @@
           </template>
         </v-data-table>
         <!-- Float Action Button -->
+        <!-- <v-spacer></v-spacer> -->
         <v-btn
-          @click="avancarCadastroInsumo()"
+          to="Media"
           color="red"
           dark
           fab
@@ -56,22 +57,6 @@
 <script>
 import { Insumos } from '@/api/insumos';
 export default {
-  created() {
-        this.$http.post('http://ubicomp.eaj.ufrn.br:8080/SIGRU/login',{
-          'login': 'admin',
-          'senha': 'adminsigru'
-        }).then(response => {
-
-          this.usuario = response.body;
-          console.log(this.usuario);
-
-          /*
-          this.insumos = response.body;
-          alert(response.body);
-          console.log(response.body);
-          */
-        })
-      },
   data () {
     return {
       usuario: '',
@@ -102,9 +87,14 @@ export default {
     }
   },
   methods: {
-    avancarCadastroInsumo(){
+    avancarCadastroInsumo() {
       //Direcionar para insumoCreate.vue
-      alert("Clicou no botão de cadastro de insumo");
+      //alert("Clicou no botão de cadastro de insumo");
+      /*
+      setTimeout(() => {
+        this.$router.push('insumo/cadastrar');
+      }, 1000);
+      */
     }
   }
 };

@@ -38,31 +38,98 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   data: () => ({
     loading: false,
-    login: '',
-    senha: ''
+    ativo: false,
+    login: 'admin',
+    senha: 'adminsigru'
   }),
 
   methods: {
+    /*
     login () {
       this.loading = true;
       setTimeout(() => {
         this.$router.push('/dashboard');
       }, 1000);
     },
+    */
     //Método que faz o login através do método http POST no backend
     logar:function(){
-      //console.log(this.login);
-      //console.log(this.senha);
+
+      //Fazendo o login através do método POST
+      axios.post('/login', {
+        login : self.login,
+        senha: self.senha
+      }).then(function(response){
+        
+        //Obtendo a resposta
+        //console.log(response.data);
+        //console.log(response.headers);
+        //self.token = response.headers.autenticator;
+        //console.log(token);
+
+        //localStorage.setItem = response.headers.token;
+        localStorage.setItem("token",response.headers.token);
+        console.log("Teste");
+        //console.log(response.headers.token);
+      });
+
+      console.log("TOKEN É ISSO: ");
+      console.log(localStorage.getItem("token"));
+      /*
+      axios.get('/insumo/listar', localStorage.token).then(function(response){
+        console.log(response.data);
+      });
+      */
+      /* 
+        axios.get('http://ubicomp.eaj.ufrn.br:8080/SIGRU/insumo/listar', config).then(function(response){
+          console.log(response.data)
+        });
+        */
+      /*
+      axios({
+        method:'get',
+        url:'http://ubicomp.eaj.ufrn.br:8080/SIGRU/insumo/listar',
+        responseType:'stream',
+        headers: config
+      })
+      .then(function (response) {
+        //response.data.pipe(fs.createWriteStream('ada_lovelace.jpg'))
+        console.log(response.data)
+      });
+      */
+
+      /*
       this.$http.post('http://ubicomp.eaj.ufrn.br:8080/SIGRU/login',{
         'login': this.login,
         'senha': this.senha
       }).then(response => {
-        console.log(response.body);
-        console.log(response.headers)
-      })
+        
+        let token = response.headers.map.Autenticator;
+        console.log(token);
+
+        //localStorage.setItem("token","token");
+        
+        //this.$router.push({name: "insumo/cadastrar"});
+        //console.log("Body");
+        //console.log(response.body);
+        console.log("Autenticador");
+        console.log(response.headers.map.Autenticator);
+
+        //authUser.data = response.body;
+        //authUser.token = response.headers.map.Autenticador;
+        window.localStorage.setItem('token', token);
+
+        if(authUser.body.tipo == 'NUTRICIONISTA'){
+          this.$router.push({name: "insumo/cadastrar"});
+        }
+
+      });
+      */
+
     }
   }
 
