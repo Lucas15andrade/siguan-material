@@ -38,47 +38,66 @@
 </template>
 
 <script>
+import api from '../auth/vue-axios/instance';
 import axios from 'axios';
+
+
 export default {
   data: () => ({
     loading: false,
     ativo: false,
     login: 'admin',
-    senha: 'adminsigru'
+    senha: 'adminsigru',
+    self: this,
   }),
 
   methods: {
-    /*
+
+    
+    logar:function(){
+      //Fazendo o login através do método POST
+      axios.post('http://ubicomp.eaj.ufrn.br:8080/SIGRU/login', {
+        login : "admin",
+        senha: "adminsigru"
+      }).then(function(response){
+        //Obtendo a resposta
+        //console.log(response.data);
+        console.log("Resposta");
+        console.log(response.data);
+        //console.log(response.headers.token);]
+        //console.log(response.headers.autenticator);
+        //localStorage.setItem("token",response.headers.autenticator);
+        document.cookie = response.headers.autenticator;
+        localStorage.setItem("token", response.headers.autenticator);
+        console.log(localStorage.getItem("token"));
+      });
+
+    axios.get('http://ubicomp.eaj.ufrn.br:8080/SIGRU/insumos/listar',{
+
+    }).then(function(response){
+
+    });
+
+      /*
     login () {
       this.loading = true;
       setTimeout(() => {
         this.$router.push('/dashboard');
       }, 1000);
     },
-    */
-    //Método que faz o login através do método http POST no backend
-    logar:function(){
+      */
 
-      //Fazendo o login através do método POST
-      axios.post('/login', {
-        login : self.login,
-        senha: self.senha
+      /*
+      axios.get('http://ubicomp.eaj.ufrn.br:8080/SIGRU/login',{
+        token: document.cookie
       }).then(function(response){
-        
-        //Obtendo a resposta
-        //console.log(response.data);
-        //console.log(response.headers);
-        //self.token = response.headers.autenticator;
-        //console.log(token);
-
-        //localStorage.setItem = response.headers.token;
-        localStorage.setItem("token",response.headers.token);
-        console.log("Teste");
-        //console.log(response.headers.token);
+        console.log(response.data);
       });
-
+      */
+      /*
       console.log("TOKEN É ISSO: ");
       console.log(localStorage.getItem("token"));
+      */
       /*
       axios.get('/insumo/listar', localStorage.token).then(function(response){
         console.log(response.data);

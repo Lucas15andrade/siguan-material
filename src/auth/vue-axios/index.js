@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueAxios from 'vue-axios'
 
-import axios from './axios'
+//import api from './instance'
 
-Vue.use(VueAxios, axios)
+Vue.use(VueAxios, Vue)
 
-export default axios
+export default Vue
