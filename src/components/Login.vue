@@ -27,7 +27,7 @@
                   <v-icon color="light-blue">fa fa-twitter fa-lg</v-icon>
                 </v-btn> -->
                 <v-spacer></v-spacer>
-                <v-btn block color="primary" @click="logar" :loading="loading">Login</v-btn>
+                <v-btn block color="primary" @click="singin" :loading="loading">Login</v-btn>
               </v-card-actions>
             </v-card>
           </v-flex>
@@ -52,7 +52,22 @@ export default {
   }),
 
   methods: {
-
+    singin() {
+      this.axios.post('/login', {
+        login: this.login,
+        senha: this.senha
+      }).then((response) => {
+        const token = response.headers.autenticator;
+        this.axios.defaults.headers.common['Authorization'] = 'bearer ' + token;
+        localStorage.setItem("token", token);
+        // Requisição para teste. Pode apagar depois
+        this.axios.get("/insumo?pagina=1&tamanho=10").then( (result) => {
+          console.log(result)
+        })
+        //limpa os campos
+        this.login = this.senha = "";
+      })
+    },
     
     logar:function(){
       //Fazendo o login através do método POST
