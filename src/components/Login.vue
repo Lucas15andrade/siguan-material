@@ -72,10 +72,14 @@ export default {
         console.log(localStorage.getItem("token"));
       });
 
-    axios.get('http://ubicomp.eaj.ufrn.br:8080/SIGRU/insumos/listar',{
-
+    /* Exemplo de get de insumos */ 
+    axios.get('http://ubicomp.eaj.ufrn.br:8080/SIGRU/insumo/1',{
+      headers: {
+        Authorization : 'bearer ' + localStorage.getItem("token")
+      }
     }).then(function(response){
-
+      console.log("Dados do GET");
+      console.log(response.data);
     });
 
       /*
