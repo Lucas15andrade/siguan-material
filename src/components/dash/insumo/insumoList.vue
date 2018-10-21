@@ -37,7 +37,7 @@
         <!-- Float Action Button -->
         <!-- <v-spacer></v-spacer> -->
         <v-btn
-          to="Media"
+          @click="avancarCadastroInsumo"
           color="red"
           dark
           fab
@@ -47,6 +47,7 @@
         <v-icon>add</v-icon>
         <v-icon>close</v-icon>
       </v-btn>
+      <v-btn block color="primary" @click="teste">Login</v-btn>
       <!-- -->        
       </template>
       <v-divider></v-divider>
@@ -56,6 +57,8 @@
 
 <script>
 import { Insumos } from '@/api/insumos';
+import axios from 'axios';
+
 export default {
   data () {
     return {
@@ -84,18 +87,26 @@ export default {
   computed: {
     retornarInsumos () {
       return Insumos;
-    }
+    },
+
   },
   methods: {
     avancarCadastroInsumo() {
       //Direcionar para insumoCreate.vue
       //alert("Clicou no botão de cadastro de insumo");
-      /*
+      
       setTimeout(() => {
-        this.$router.push('insumo/cadastrar');
+        this.$router.push({name: "insumo/cadastrar"});
       }, 1000);
-      */
+      
+    },
+
+    teste(){
+      this.axios.get("/insumo/5").then(function(response){
+        console.log(response.data);
+      });
     }
+    
   }
 };
 </script>

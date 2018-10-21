@@ -39,7 +39,9 @@
 
 <script>
 import api from '../auth/vue-axios/instance';
+import autenticacao from '../auth/vue-axios/api';
 import axios from 'axios';
+import jwt from 'jsonwebtoken';
 
 
 export default {
@@ -53,6 +55,12 @@ export default {
 
   methods: {
     singin() {
+
+      autenticacao(this.login, this.senha);
+      //let teste = jwt.decode(localStorage.getItem('token'), {json: true});
+      //console.log(teste);
+
+      /*
       this.axios.post('/login', {
         login: this.login,
         senha: this.senha
@@ -61,13 +69,23 @@ export default {
         this.axios.defaults.headers.common['Authorization'] = 'bearer ' + token;
         localStorage.setItem("token", token);
         // Requisição para teste. Pode apagar depois
+        
         this.axios.get("/insumo?pagina=1&tamanho=10").then( (result) => {
-          console.log(result)
+          //console.log(result)
         })
+        
         //limpa os campos
         this.login = this.senha = "";
       })
+
+
+      this.axios.get("/insumo/5").then(function(response){
+        console.log(response.data);
+      });
+      */
+
     },
+    
     
     logar:function(){
       //Fazendo o login através do método POST
