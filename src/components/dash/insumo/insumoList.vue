@@ -18,12 +18,18 @@
           <template slot="items" slot-scope="props">
             <td>
               <v-avatar size="36px">
+                <!--
                 <img :src="props.item.avatar" :alt="props.item.username" />
+                -->
               </v-avatar>
             </td>
-            <td>{{ props.item.name }}</td>
-            <td class="text-xs-left">{{ props.item.deadline }}</td>
+            {{props.item.nome}}
+            <td>{{ props.item.nome }}</td>
+            
+            <td class="text-xs-left">{{ props.item.descrição }}</td>
+            <!--
             <td class="text-xs-left"><v-progress-linear :value="props.item.progress" height="5" :color="props.item.color"></v-progress-linear> </td>
+            -->
             <td class="text-xs-right">
               <v-btn flat icon color="grey">
                 <v-icon>edit</v-icon>
@@ -56,14 +62,19 @@
 </template>
 
 <script>
-import { Insumos } from '@/api/insumos';
+//import { Insumos } from '@/api/insumos';
 import axios from 'axios';
+import instance from '../../../auth/vue-axios/instance';
+import testeInsumoList from '../../../auth/vue-axios/api';
 
+// "../" volta um nível na hierarquia
+ 
 export default {
   data () {
     return {
       usuario: '',
       insumos: [],
+      self: this,
       headers: [
         {
           text: '',
@@ -86,7 +97,17 @@ export default {
   },
   computed: {
     retornarInsumos () {
-      return Insumos;
+      console.log("Retornar insumo");
+
+      instance.get('/insumo').then(function(response){
+        //this.insumos = response.data;
+        console.log("Dentro do get");
+        return response.data;
+        //console.log(insumos);
+      });
+      console.log("Retornando insumos");
+      ///console.log(insumos);
+      //return insumos;
     },
 
   },

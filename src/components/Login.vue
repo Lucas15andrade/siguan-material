@@ -39,9 +39,10 @@
 
 <script>
 import api from '../auth/vue-axios/instance';
-import autenticacao from '../auth/vue-axios/api';
+import {login, verificaToken, testeInsumoList} from '../auth/vue-axios/api';
+//import verificaToken from '../auth/vue-axios/api';
 import axios from 'axios';
-import jwt from 'jsonwebtoken';
+//import jwt from 'jsonwebtoken';
 
 
 export default {
@@ -54,9 +55,18 @@ export default {
   }),
 
   methods: {
+
+    singin:function(){
+      login(this.login, this.senha);
+      //insumos = testeInsumoList();
+    },
+
+    /*
     singin() {
 
-      autenticacao(this.login, this.senha);
+      login(this.login, this.senha);
+      //verificaToken("kkkk");
+
       //let teste = jwt.decode(localStorage.getItem('token'), {json: true});
       //console.log(teste);
 
@@ -82,9 +92,9 @@ export default {
       this.axios.get("/insumo/5").then(function(response){
         console.log(response.data);
       });
-      */
+      
 
-    },
+    },*/
     
     
     logar:function(){
