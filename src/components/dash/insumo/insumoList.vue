@@ -12,11 +12,11 @@
       <template>
         <v-data-table
           :headers="headers"
-          :items="retornarInsumos"
+          :items="insumos"
           hide-actions
           class="elevation-0">
           <template slot="items" slot-scope="props">
-            <td>
+                  <td>
               <v-avatar size="36px">
                 <!--
                 <img :src="props.item.avatar" :alt="props.item.username" />
@@ -26,7 +26,7 @@
             {{props.item.nome}}
             <td>{{ props.item.nome }}</td>
             
-            <td class="text-xs-left">{{ props.item.descrição }}</td>
+            <td class="text-xs-left">{{ props.item.unidadeBase }}</td>
             <!--
             <td class="text-xs-left"><v-progress-linear :value="props.item.progress" height="5" :color="props.item.color"></v-progress-linear> </td>
             -->
@@ -63,71 +63,93 @@
 
 <script>
 //import { Insumos } from '@/api/insumos';
-import axios from 'axios';
-import instance from '../../../auth/vue-axios/instance';
-import testeInsumoList from '../../../auth/vue-axios/api';
+import axios from "axios";
+import instance from "../../../auth/vue-axios/instance";
+import testeInsumoList from "../../../auth/vue-axios/api";
 
 // "../" volta um nível na hierarquia
- 
+
 export default {
-  data () {
+  data() {
     return {
-      usuario: '',
+      usuario: "",
       insumos: [],
       self: this,
       headers: [
         {
-          text: '',
-          align: 'center',
+          text: "",
+          align: "center",
           sortable: false,
-          value: 'avatar'
+          value: "avatar"
         },
         {
-          text: 'Insumo',
-          align: 'left',
-          value: 'name'
+          text: "Insumo",
+          align: "left",
+          value: "name"
         },
-        { text: 'Descrição', value: 'deadline' },
-        { text: 'Unidade base', value: 'progress' },
-        { text: 'Ações', value: 'action', align: 'right' },
-
-      ],
-      
+        { text: "Descrição", value: "deadline" },
+        { text: "Unidade base", value: "progress" },
+        { text: "Ações", value: "action", align: "right" }
+      ]
     };
   },
+  mounted() {
+    instance.get("/insumo").then(res => {
+      this.insumos = res.data;
+      console.log(this.insumos);
+    });
+  },
   computed: {
-    retornarInsumos () {
+    /*retornarInsumos() {
       console.log("Retornar insumo");
 
-      instance.get('/insumo').then(function(response){
+      instance.get("/insumo").then(function(response) {
+        //this.insumos = response.data;
+        //console.log(desserts + "EAE");
+
+        let arr = [];
+        arr = response.data;
+        console.log(arr.map(e => e.nome));
+
+        return arr.map(e => e.nome);
+        //console.log(insumos);
+      });
+      console.log("Retornando insumos");
+      ///console.log(insumos);
+      //return insumos;
+    }*/
+  },
+  methods: {
+    avancarCadastroInsumo() {
+      //Direcionar para insumoCreate.vue
+      //alert("Clicou no botão de cadastro de insumo");
+
+      setTimeout(() => {
+        this.$router.push({ name: "insumo/cadastrar" });
+      }, 1000);
+    },
+
+    teste() {
+      this.axios.get("/insumo/5").then(function(response) {
+        console.log(response.data);
+      });
+    },
+
+    retornarInsumos() {
+      console.log("Retornar insumo");
+
+      instance.get("/insumo").then(function(response) {
         //this.insumos = response.data;
         console.log("Dentro do get");
+
+        console.log(response.data);
         return response.data;
         //console.log(insumos);
       });
       console.log("Retornando insumos");
       ///console.log(insumos);
       //return insumos;
-    },
-
-  },
-  methods: {
-    avancarCadastroInsumo() {
-      //Direcionar para insumoCreate.vue
-      //alert("Clicou no botão de cadastro de insumo");
-      
-      setTimeout(() => {
-        this.$router.push({name: "insumo/cadastrar"});
-      }, 1000);
-      
-    },
-
-    teste(){
-      this.axios.get("/insumo/5").then(function(response){
-        console.log(response.data);
-      });
     }
-    
   }
 };
 </script>
